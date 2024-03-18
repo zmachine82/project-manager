@@ -4,7 +4,7 @@
   "description": "TODO: <!-- create frontend --> <!-- create backend -->",
   "main": "index.js",
   "scripts": {
-    "build:prod": "build.sh",
+    "build:prod": "./build.sh",
     "prod": "node ./dist/server.js"
   },
   "keywords": [],
