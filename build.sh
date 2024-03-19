@@ -1,4 +1,7 @@
 cp -r ./backend/. ./dist
+cd ./dist
+npm ci
+cd ..
 mkdir ./dist/public
 cd frontend
 npm ci
