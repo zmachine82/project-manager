@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { environment } from '../environments/environment.development';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'newer frontend';
+  constructor(http: HttpClient) {
+    http.get(environment.apiUrl + '/stuff').subscribe(res => {
+      console.log(res);
+
+    })
+  }
 }

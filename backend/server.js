@@ -1,8 +1,15 @@
 const express = require('express');
 const app = express();
-app.use(express.static(__dirname + '/public'))
+const cors = require('cors')
 
-app.get('/', (req,res) => {
-    res.status(200).send('<h1>this is a great app</h1>')
+app.use(express.static(__dirname + '/public'))
+app.use(cors())
+
+
+app.get('/stuff', (req,res) => {
+    res.status(200).json({
+        stuff: 'here is some great stuff'
+    })
 })
+
 app.listen(3000, () => console.log(`listening on http://localhost:${3000}`));
