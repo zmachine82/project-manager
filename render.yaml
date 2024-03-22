@@ -1,0 +1,28 @@
+# Exported from Render on 2024-03-22T20:54:31Z
+services:
+- type: web
+  name: project-manager
+  runtime: node
+  repo: https://github.com/zmachine82/project-manager
+  branch: main
+  plan: free
+  envVars:
+  - key: PORT
+    sync: false
+  region: ohio
+  buildCommand: npm install
+  startCommand: node server.js
+  rootDir: backend
+- type: web
+  name: project-manager-front
+  runtime: static
+  repo: https://github.com/zmachine82/project-manager
+  branch: main
+  buildCommand: npm install; npm run build
+  staticPublishPath: dist/frontend
+  routes:
+  - type: rewrite
+    source: /*
+    destination: /index.html
+  rootDir: frontend
+version: "1"
