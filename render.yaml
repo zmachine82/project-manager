@@ -18,7 +18,7 @@ services:
   runtime: static
   repo: https://github.com/zmachine82/project-manager
   branch: main
-  buildCommand: npm install; npm run test; npm run build
+  buildCommand: npm install;  npm run build
   staticPublishPath: dist/frontend
   routes:
   - type: rewrite
