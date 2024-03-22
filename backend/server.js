@@ -6,10 +6,8 @@ app.use(express.static(__dirname + '/public'))
 app.use(cors())
 
 
-app.get('/stuff', (req,res) => {
-    res.status(200).json({
-        stuff: 'here is some great stuff'
-    })
-})
+app.all('*', function (req, res) {
+    res.status(200).sendFile(`/`);
+});
 
 app.listen(3000, () => console.log(`listening on http://localhost:${3000}`));
