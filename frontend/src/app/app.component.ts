@@ -9,10 +9,5 @@ import { environment } from '../environments/environment.development';
 })
 export class AppComponent {
   title = 'newer frontend';
-  constructor(http: HttpClient) {
-    http.get(environment.apiUrl + '/stuff').subscribe(res => {
-      console.log(res);
 
-    })
-  }
 }

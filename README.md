@@ -4,8 +4,8 @@ TODO:
 <!-- create frontend -->
 <!-- create backend -->
 
-setup deployments
-create firebase project for users (use firebase for auth, but create custom jwt tokens for security, aka, if we get a valid firebase token, create a custom jwt)
+<!-- setup deployments -->
+<!-- create firebase project for users (use firebase for auth, but create custom jwt tokens for security, aka, if we get a valid firebase token, create a custom jwt) -->
 
 <!-- all features assumed to be front end AND back end -->
 sign up page

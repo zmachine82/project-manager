@@ -1,29 +1,45 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { routes } from './app-routing.module';
+import { Router } from '@angular/router';
+import { By } from '@angular/platform-browser';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { MockComponent } from "ng-mocks";
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [AppComponent]
-  }));
+  let router: Router
+  let fixture: ComponentFixture<AppComponent>;
+  let app: AppComponent;
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule.withRoutes(routes)],
+      declarations: [AppComponent, MockComponent(SignUpComponent)]
+    })
+
+    router = TestBed.inject(Router)
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.componentInstance;
+    fixture.detectChanges()
+  });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'frontend'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('frontend');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  it('should display the sign up component when navigating to /sign-up', async () => {
+    await router.navigateByUrl('/')
+    let signUpPage = fixture.debugElement.query(By.directive(SignUpComponent))
+    expect(signUpPage).toBeFalsy();
+    
+    await router.navigateByUrl('/sign-up')
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('frontend app is running!');
-  });
+
+    signUpPage = fixture.debugElement.query(By.directive(SignUpComponent))
+    expect(signUpPage).toBeTruthy();
+  })
+
+
+
+
 });
