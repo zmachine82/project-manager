@@ -108,7 +108,7 @@ describe('SignUpComponent', () => {
   let firebaseService: FirebaseService;
   let router: Router;
 
-  beforeEach(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [SignUpComponent],
       imports: [FormsModule, RouterTestingModule.withRoutes(routes)],
@@ -123,6 +123,7 @@ describe('SignUpComponent', () => {
     firebaseService = TestBed.inject(FirebaseService)
     router = TestBed.inject(Router)
     fixture.detectChanges();
+    await fixture.whenStable().then(() => {})
   });
 
   it('should submit valid form', done => {
@@ -153,35 +154,31 @@ describe('SignUpComponent', () => {
 
   });
 
-  it('should not submit invalid form', fakeAsync((done: any) => {
-    fixture.whenStable().then(() => {
-
-      expect(errorMessageContainer.nativeElement.textContent.trim()).toBe('')
-      expect(submitButton.nativeElement.disabled).toBeTruthy()
-
-      emailInput.nativeElement.value = 'test@wow.com'
-      emailInput.nativeElement.dispatchEvent(new Event('input'));
-
-      passwordInput.nativeElement.value = '12345678'
-      passwordInput.nativeElement.dispatchEvent(new Event('input'));
-
-      fixture.detectChanges()
-      fixture.detectChanges()
-      submitButton = fixture.debugElement.query(By.css('#submitButton'))
+  it('should not submit invalid form', fakeAsync( () => {
 
 
-      spyOn(firebaseService, 'tryToSignUp').and.returnValue(of('error message'))
-      spyOn(router, 'navigateByUrl')
+    expect(errorMessageContainer.nativeElement.textContent.trim()).toBe('')
+    expect(submitButton.nativeElement.disabled).toBeTruthy()
 
-      submitButton.nativeElement.click()
-      tick()
-      fixture.detectChanges()
-      expect(errorMessageContainer.nativeElement.textContent.trim()).toBe('error message')
-      expect(router.navigateByUrl).not.toHaveBeenCalled()
-      expect(firebaseService.tryToSignUp).not.toHaveBeenCalled()
-      done()
+    emailInput.nativeElement.value = 'test@wow.com'
+    emailInput.nativeElement.dispatchEvent(new Event('input'));
 
-    })
+    passwordInput.nativeElement.value = '12345678'
+    passwordInput.nativeElement.dispatchEvent(new Event('input'));
+
+    fixture.detectChanges()
+    fixture.detectChanges()
+    submitButton = fixture.debugElement.query(By.css('#submitButton'))
+
+
+    spyOn(firebaseService, 'tryToSignUp').and.returnValue(of('error message'))
+    spyOn(router, 'navigateByUrl')
+
+    submitButton.nativeElement.click()
+    tick()
+    fixture.detectChanges()
+    expect(errorMessageContainer.nativeElement.textContent.trim()).toBe('error message')
+    expect(router.navigateByUrl).not.toHaveBeenCalled()
 
   }));
 

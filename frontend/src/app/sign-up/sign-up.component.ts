@@ -14,12 +14,12 @@ export class SignUpComponent {
   errorMessage: string = '';
 
 
-  constructor(private firebaseService: FirebaseService, private router: Router){}
+  constructor(private firebaseService: FirebaseService, private router: Router) { }
 
   formIsValid(): any {
 
     if (this.email === '' || this.password === '') {
-      return  false
+      return false
     } else {
       return true
     }
@@ -30,13 +30,13 @@ export class SignUpComponent {
   }
 
   submitForm() {
-    if(this.formIsValid()) {
-      this.firebaseService.tryToSignUp({email: this.email, password: this.password}).subscribe(message => {
+    if (this.formIsValid()) {
+      this.firebaseService.tryToSignUp({ email: this.email, password: this.password }).subscribe(message => {
         this.errorMessage = message;
-        if(message == '') {
+        if (message == '') {
           this.router.navigateByUrl('/')
         }
-      } )
+      })
     }
   }
 }
