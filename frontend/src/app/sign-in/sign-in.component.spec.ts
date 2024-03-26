@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
-import { SignUpComponent } from './sign-up.component';
 import { FirebaseService } from '../firebase.service';
 import { MockProvider, MockService } from 'ng-mocks';
 import { of } from 'rxjs';
@@ -10,12 +9,15 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { routes } from '../app-routing.module';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { SignInComponent } from './sign-in.component';
 import { AuthFormComponent } from '../auth-form/auth-form.component';
 
 
-describe('SignUpComponent', () => {
-  let component: SignUpComponent;
-  let fixture: ComponentFixture<SignUpComponent>;
+
+
+describe('SignInComponent', () => {
+  let component: SignInComponent;
+  let fixture: ComponentFixture<SignInComponent>;
   let emailInput: DebugElement;
   let passwordInput: DebugElement;
   let submitButton: DebugElement;
@@ -25,11 +27,11 @@ describe('SignUpComponent', () => {
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      declarations: [SignUpComponent, AuthFormComponent],
+      declarations: [SignInComponent, AuthFormComponent],
       imports: [FormsModule, RouterTestingModule.withRoutes(routes), ReactiveFormsModule],
       providers: [MockProvider(FirebaseService)]
     });
-    fixture = TestBed.createComponent(SignUpComponent);
+    fixture = TestBed.createComponent(SignInComponent);
     component = fixture.componentInstance;
     emailInput = fixture.debugElement.query(By.css('#email'))
     passwordInput = fixture.debugElement.query(By.css('#password'))
@@ -56,7 +58,7 @@ describe('SignUpComponent', () => {
 
 
 
-      spyOn(firebaseService, 'tryToSignUp').and.returnValue(of(''))
+      spyOn(firebaseService, 'tryToSignIn').and.returnValue(of(''))
       spyOn(router, 'navigateByUrl')
 
       submitButton.nativeElement.click()
@@ -86,7 +88,7 @@ describe('SignUpComponent', () => {
     submitButton = fixture.debugElement.query(By.css('#submitButton'))
 
 
-    spyOn(firebaseService, 'tryToSignUp').and.returnValue(of('error message'))
+    spyOn(firebaseService, 'tryToSignIn').and.returnValue(of('error message'))
     spyOn(router, 'navigateByUrl')
 
     submitButton.nativeElement.click()

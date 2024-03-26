@@ -1,11 +1,3 @@
-<form (ngSubmit)="submitForm()">
-  <label for="email">Email</label>
-  <input type="email" name="email" id="email" [(ngModel)]="email">
-  <label for="password">Password</label>
-  <input type="password" name="password" id="password" [(ngModel)]="password">
+<app-auth-form type="sign-up"></app-auth-form>
 
-  <button id="submitButton" type="submit" [disabled]="submitButtonDisabled()">Submit</button>
-</form>
-<div id="errorMessage">
-  {{errorMessage}}
-</div>
+

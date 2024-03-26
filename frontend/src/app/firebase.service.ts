@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { Observable, catchError, from, map, of, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +8,30 @@ import { Observable, of } from 'rxjs';
 export class FirebaseService {
 
 
-  constructor() { }
 
-  tryToSignUp(tryToSignUp: any): Observable<string>  {
-    return of('')
+  constructor(
+    private Auth: Auth
+  ) {
   }
+
+  tryToSignUp(userData: { email: string, password: string }): Observable<string> {
+    return from(createUserWithEmailAndPassword(this.Auth, userData.email, userData.password))
+      .pipe(switchMap(x => {
+
+        return of('')
+      }), catchError((err) => {
+        return of(err.toString())
+      }))
+  }
+
+  tryToSignIn(userData: { email: string, password: string }): Observable<string> {
+    return from(signInWithEmailAndPassword(this.Auth, userData.email, userData.password))
+    .pipe(switchMap(x => {
+      return of('')
+    }), catchError((err) => {
+      return of(err.toString())
+    }))
+  }
+
+
 }

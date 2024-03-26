@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FirebaseService } from '../firebase.service';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,34 +10,5 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent {
 
-  email: string = '';
-  password: string = '';
-  errorMessage: string = '';
 
-
-  constructor(private firebaseService: FirebaseService, private router: Router) { }
-
-  formIsValid(): any {
-
-    if (this.email === '' || this.password === '') {
-      return false
-    } else {
-      return true
-    }
-  }
-
-  submitButtonDisabled(): boolean {
-    return !this.formIsValid()
-  }
-
-  submitForm() {
-    if (this.formIsValid()) {
-      this.firebaseService.tryToSignUp({ email: this.email, password: this.password }).subscribe(message => {
-        this.errorMessage = message;
-        if (message == '') {
-          this.router.navigateByUrl('/')
-        }
-      })
-    }
-  }
 }

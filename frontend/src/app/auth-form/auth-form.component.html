@@ -1,0 +1,10 @@
+<form (ngSubmit)="submitForm()" [formGroup]="form">
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email" formControlName="email">
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password" formControlName="password">
+  <button id="submitButton" type="submit" [disabled]="submitButtonDisabled()">Submit</button>
+</form>
+<div id="errorMessage">
+  {{errorMessage}}
+</div>
