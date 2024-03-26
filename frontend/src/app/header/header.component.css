@@ -1,0 +1,14 @@
+.header {
+  background-color: rgb(43, 87, 169);
+  color: white;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+h1 {
+  margin: 0 0 0 16px;
+}
+h3 {
+  margin: 0 16px 0 0;
+}

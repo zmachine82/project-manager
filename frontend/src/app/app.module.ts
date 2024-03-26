@@ -11,13 +11,15 @@ import { connectAuthEmulator, getAuth, provideAuth } from '@angular/fire/auth';
 import { environment } from '../environments/environment.development';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { AuthFormComponent } from './auth-form/auth-form.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
     SignInComponent,
-    AuthFormComponent
+    AuthFormComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
