@@ -9,5 +9,6 @@ export const environment = {
     appId: "1:129389104236:web:5da3a01910dded2eba1c49",
     measurementId: "G-3DZXBN31NY"
   },
-  useEmulator: true
+  useEmulator: true,
+  identity: 'dev'
 };

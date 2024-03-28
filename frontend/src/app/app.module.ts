@@ -30,8 +30,8 @@ import { HeaderComponent } from './header/header.component';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => {
       const auth = getAuth();
+
       if(environment.useEmulator) {
-        console.log("using the emulator");
 
         connectAuthEmulator(auth, 'http://localhost:9099', { disableWarnings: true });
       }
