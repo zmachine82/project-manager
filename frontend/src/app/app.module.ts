@@ -31,6 +31,8 @@ import { HeaderComponent } from './header/header.component';
     provideAuth(() => {
       const auth = getAuth();
       if(environment.useEmulator) {
+        console.log("using the emulator");
+
         connectAuthEmulator(auth, 'http://localhost:9099', { disableWarnings: true });
       }
       return auth;
