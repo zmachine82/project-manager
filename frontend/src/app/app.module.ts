@@ -12,6 +12,7 @@ import { environment } from '../environments/environment.development';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { AuthFormComponent } from './auth-form/auth-form.component';
 import { HeaderComponent } from './header/header.component';
+import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HeaderComponent } from './header/header.component';
     SignUpComponent,
     SignInComponent,
     AuthFormComponent,
-    HeaderComponent
+    HeaderComponent,
+    TicTacToeComponent
   ],
   imports: [
     BrowserModule,

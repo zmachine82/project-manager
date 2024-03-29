@@ -1,0 +1,53 @@
+<div class="board">
+  <div class="row">
+    <div class="column" (click)="board.playMove('top-left')">
+      <span>
+        {{board.state[0][0]}}
+      </span>
+    </div>
+    <div class="column" (click)="board.playMove('top-middle')">
+      <span>
+        {{board.state[0][1]}}
+      </span>
+    </div>
+    <div class="column" (click)="board.playMove('top-right')">
+      <span>
+        {{board.state[0][2]}}
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column" (click)="board.playMove('left')">
+      <span>
+        {{board.state[1][0]}}
+      </span>
+    </div>
+    <div class="column" (click)="board.playMove('middle')">
+      <span>
+        {{board.state[1][1]}}
+      </span>
+    </div>
+    <div class="column" (click)="board.playMove('right')">
+      <span>
+        {{board.state[1][2]}}
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column" (click)="board.playMove('bottom-left')">
+      <span>
+        {{board.state[2][0]}}
+      </span>
+    </div>
+    <div class="column" (click)="board.playMove('bottom-middle')">
+      <span>
+        {{board.state[2][1]}}
+      </span>
+    </div>
+    <div class="column" (click)="board.playMove('bottom-right')">
+      <span>
+        {{board.state[2][2]}}
+      </span>
+    </div>
+  </div>
+</div>

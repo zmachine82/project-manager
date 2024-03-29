@@ -1,0 +1,20 @@
+.board {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+}
+.column {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+}
+span {
+  font-size: 48px;
+}
