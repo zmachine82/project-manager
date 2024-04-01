@@ -1,6 +1,6 @@
 import { TicTacToeBoard } from "./TicTacToeBoard"
 
-fdescribe('the board', () => {
+describe('the board', () => {
 
   it('should be empty on start', () => {
     const board = new TicTacToeBoard()
@@ -112,5 +112,5 @@ fdescribe('the board', () => {
     ])
   })
 
-  
+
 })
