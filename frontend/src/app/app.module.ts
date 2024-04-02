@@ -13,6 +13,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { AuthFormComponent } from './auth-form/auth-form.component';
 import { HeaderComponent } from './header/header.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
+import { SubmissionsComponent } from './submissions/submissions.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
     SignInComponent,
     AuthFormComponent,
     HeaderComponent,
-    TicTacToeComponent
+    TicTacToeComponent,
+    SubmissionsComponent
   ],
   imports: [
     BrowserModule,

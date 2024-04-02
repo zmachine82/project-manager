@@ -10,6 +10,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { HeaderComponent } from './header/header.component';
 import { Auth } from '@angular/fire/auth';
+import { SubmissionsComponent } from './submissions/submissions.component';
 
 describe('AppComponent', () => {
   let router: Router
@@ -66,6 +67,12 @@ describe('AppComponent', () => {
 
     ticTacToePage = fixture.debugElement.query(By.directive(TicTacToeComponent))
     expect(ticTacToePage).toBeTruthy();
+  })
+
+  it('should display the submission component', async () => {
+    await router.navigateByUrl('/')
+    let submissions = fixture.debugElement.query(By.directive(SubmissionsComponent))
+    expect(submissions).toBeTruthy();
   })
 
 

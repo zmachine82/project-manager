@@ -4,11 +4,13 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
+import { SubmissionsComponent } from './submissions/submissions.component';
 
 export const routes: Routes = [
   {path: 'sign-up', component: SignUpComponent},
   {path: 'sign-in', component: SignInComponent},
-  {path: 'secret', component: TicTacToeComponent}
+  {path: 'secret', component: TicTacToeComponent},
+  {path: '', component: SubmissionsComponent}
 ];
 
 @NgModule({

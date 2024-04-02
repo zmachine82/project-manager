@@ -1,0 +1,14 @@
+<form [formGroup]="form">
+  <!-- Define your form controls here -->
+  <!-- For example: -->
+  <input id="name" type="text" formControlName="name" placeholder="Name">
+  <input id="email" type="email" formControlName="email" placeholder="Email">
+  <input id="description" type="text" formControlName="projectDescription" placeholder="Description">
+  <!-- Add more controls as needed -->
+</form>
+<div id="errorMessage" *ngIf="submissionError">
+  Somethings wrong, try again later
+</div>
+
+
+<button id="submit" (click)="submitForm()">Submit</button>
