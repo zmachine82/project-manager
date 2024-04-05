@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { SubmissionsService } from './submissions.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
-fdescribe('SubmissionsService', () => {
+describe('SubmissionsService', () => {
   let service: SubmissionsService;
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;

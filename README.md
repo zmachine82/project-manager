@@ -11,8 +11,8 @@ TODO:
 <!-- sign up page -->
 <!-- sign in page -->
 
-publically available
-    submission page
+<!-- publically available -->
+<!-- submission page -->
 
 not publically available
     admins only view unapproved submissions
