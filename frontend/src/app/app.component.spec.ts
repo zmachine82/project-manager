@@ -5,12 +5,13 @@ import { routes } from './app-routing.module';
 import { Router } from '@angular/router';
 import { By } from '@angular/platform-browser';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { MockComponent, MockComponents, MockProvider } from "ng-mocks";
+import {  MockComponents,  MockProviders } from "ng-mocks";
 import { SignInComponent } from './sign-in/sign-in.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { HeaderComponent } from './header/header.component';
 import { Auth } from '@angular/fire/auth';
 import { SubmissionsComponent } from './submissions/submissions.component';
+import { SubmissionsService } from './submissions.service';
 
 describe('AppComponent', () => {
   let router: Router
@@ -20,7 +21,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule.withRoutes(routes)],
       declarations: [AppComponent, MockComponents(SignUpComponent, SignInComponent, TicTacToeComponent, HeaderComponent)],
-      providers: [MockProvider(Auth)]
+      providers: [MockProviders(Auth, SubmissionsService)]
     })
 
     router = TestBed.inject(Router)
