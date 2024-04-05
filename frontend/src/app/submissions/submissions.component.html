@@ -11,4 +11,4 @@
 </div>
 
 
-<button id="submit" (click)="submitForm()">Submit</button>
+<button id="submit" (click)="submitForm()" [disabled]="!canSubmitForm()">Submit</button>

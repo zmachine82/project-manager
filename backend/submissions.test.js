@@ -1,11 +1,9 @@
 const request = require('supertest');
-
+const app = require('./app')
+const databaseTest = require('./databaseTest');
 
 describe('Submissions', () => {
-    let app;
-    beforeEach(() => {
-        app = require('./app')
-    })
+    databaseTest()
     it('should be able to add submissions', () => {
         return request(app)
             .post('/submissions')

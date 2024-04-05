@@ -28,11 +28,7 @@ export class SubmissionsComponent {
 
   submitForm() {
     this.submissionError = false
-    this.submissionsService.submit({
-      name: 'Nonprofit Billy',
-      email: 'billy@place.com',
-      projectDescription: 'I need help because I am tech iliterated'
-    }).pipe(
+    this.submissionsService.submit(this.form.value).pipe(
       catchError((err: any, caught: Observable<void>) => {
         // form fails to submit
         this.submissionError = true
