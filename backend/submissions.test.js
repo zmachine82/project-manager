@@ -4,7 +4,7 @@ const databaseTest = require('./databaseTest');
 
 describe('Submissions', () => {
     databaseTest()
-    it('should be able to add submissions', () => {
+    it('should be able to add submissions and defaults project name to the id', () => {
         return request(app)
             .post('/submissions')
             .send({
@@ -15,6 +15,7 @@ describe('Submissions', () => {
             .expect(200)
             .then(response => {
                 expect(response.body._id).toBeTruthy()
+                expect(response.body.projectName).toEqual(response.body._id)
             })
     })
 

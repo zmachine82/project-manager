@@ -13,8 +13,18 @@ const submissionSchema = new mongoose.Schema (
         projectDescription: {
             type: String,
             required: [true, 'Project description required.' ]
+        },
+        projectName: {
+            type: String
         }
     }
 )
+
+submissionSchema.post('save', function (submission) {
+    if(!submission.projectName) {
+        submission.projectName = submission._id
+        submission.save()
+    }
+  });
 
 module.exports = mongoose.model ('Submission', submissionSchema);

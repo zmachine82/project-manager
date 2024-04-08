@@ -9,11 +9,8 @@ app.use(express.json())
 
 
 app.post('/submissions', async (req, res) => {
-
     try {
-        
         const submission = await Submission.create(req.body)
-        
         res.status(200).json(submission);
     } catch (err) {
         console.log(err);
