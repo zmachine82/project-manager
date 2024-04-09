@@ -1,0 +1,3 @@
+<div *ngFor="let submission of submissionsData" [routerLink]="['/admin', 'submission', submission._id]">
+  {{submission.email}}, {{submission.name}}, {{submission.projectName}}
+</div>

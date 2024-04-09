@@ -14,6 +14,9 @@ import { AuthFormComponent } from './auth-form/auth-form.component';
 import { HeaderComponent } from './header/header.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { SubmissionsComponent } from './submissions/submissions.component';
+import { AdminComponent } from './admin/admin.component';
+import { SubmissionsListComponent } from './admin/submissions-list/submissions-list.component';
+import { SubmissionReviewComponent } from './submission-review/submission-review.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { SubmissionsComponent } from './submissions/submissions.component';
     AuthFormComponent,
     HeaderComponent,
     TicTacToeComponent,
-    SubmissionsComponent
+    SubmissionsComponent,
+    AdminComponent,
+    SubmissionsListComponent,
+    SubmissionReviewComponent
   ],
   imports: [
     BrowserModule,

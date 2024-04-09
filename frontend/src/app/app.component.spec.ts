@@ -12,6 +12,8 @@ import { HeaderComponent } from './header/header.component';
 import { Auth } from '@angular/fire/auth';
 import { SubmissionsComponent } from './submissions/submissions.component';
 import { SubmissionsService } from './submissions.service';
+import { AdminComponent } from './admin/admin.component';
+import { SubmissionReviewComponent } from './submission-review/submission-review.component';
 
 describe('AppComponent', () => {
   let router: Router
@@ -20,7 +22,7 @@ describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule.withRoutes(routes)],
-      declarations: [AppComponent, MockComponents(SignUpComponent, SignInComponent, TicTacToeComponent, HeaderComponent)],
+      declarations: [AppComponent, MockComponents(SignUpComponent, SignInComponent, TicTacToeComponent, HeaderComponent, AdminComponent, SubmissionReviewComponent)],
       providers: [MockProviders(Auth, SubmissionsService)]
     })
 
@@ -74,6 +76,31 @@ describe('AppComponent', () => {
     await router.navigateByUrl('/')
     let submissions = fixture.debugElement.query(By.directive(SubmissionsComponent))
     expect(submissions).toBeTruthy();
+  })
+
+  it('should display the admin component when navigating to /admin', async () => {
+    await router.navigateByUrl('/')
+    let adminPage = fixture.debugElement.query(By.directive(AdminComponent))
+    expect(adminPage).toBeFalsy();
+
+    await router.navigateByUrl('/admin')
+    fixture.detectChanges();
+
+    adminPage = fixture.debugElement.query(By.directive(AdminComponent))
+    expect(adminPage).toBeTruthy();
+  })
+
+
+  it('should display the submission-review component when navigating to /admin/submission/{id}', async () => {
+    await router.navigateByUrl('/')
+    let submissionReviewPage = fixture.debugElement.query(By.directive(SubmissionReviewComponent))
+    expect(submissionReviewPage).toBeFalsy();
+
+    await router.navigateByUrl('/admin/submission/123')
+    fixture.detectChanges();
+
+    submissionReviewPage = fixture.debugElement.query(By.directive(SubmissionReviewComponent))
+    expect(submissionReviewPage).toBeTruthy();
   })
 
 

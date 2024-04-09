@@ -8,6 +8,7 @@ import { environment } from '../environments/environment.development';
 })
 export class SubmissionsService {
 
+
   constructor(private http: HttpClient) {
 
 
@@ -16,6 +17,11 @@ export class SubmissionsService {
   submit(newSubmission: {name: string, email: string, projectDescription: string}): Observable<void> {
     return this.http.post<any>(environment.apiUrl + '/submissions', newSubmission)
   }
+
+
+  getAllSubmissions(): Observable<any> {
+    return this.http.get(environment.apiUrl +'/submissions');
+    }
 }
 
 

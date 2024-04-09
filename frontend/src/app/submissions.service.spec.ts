@@ -35,4 +35,20 @@ describe('SubmissionsService', () => {
     const result = {_id: "1234", ...formData}
     req.flush(result);
   });
+
+  it('should get all submissions from backend', done => {
+
+    const submissionData = {_id: '123id', projectName: '123id', name: 'Owen Wilson', email: "Wow@wow.com", projectDescription: 'a new project'}
+    service.getAllSubmissions().subscribe(res => {
+      expect(res).toEqual([submissionData])
+      done()
+    })
+
+    const req = httpTestingController.expectOne('http://localhost:3000/submissions');
+
+    // Assert that the request is a GET.
+    expect(req.request.method).toEqual('GET');
+    const result = [submissionData]
+    req.flush(result);
+  });
 });
