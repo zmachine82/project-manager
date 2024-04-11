@@ -1,15 +1,13 @@
-import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import {  TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { SubmissionsListComponent } from './submissions-list.component';
-import { MockComponent, MockProvider } from 'ng-mocks';
+import { MockProvider } from 'ng-mocks';
 import { SubmissionsService } from '../../submissions.service';
 import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
 import { RouterTestingHarness, RouterTestingModule } from '@angular/router/testing';
 import { routes } from '../../app-routing.module';
-import { Router, RouterLink, RouterLinkWithHref } from '@angular/router';
 import { Location } from '@angular/common';
-import { SubmissionsComponent } from '../../submissions/submissions.component';
 import { AdminComponent } from '../admin.component';
 
 describe('SubmissionsListComponent', () => {

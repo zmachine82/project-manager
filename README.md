@@ -21,4 +21,3 @@ not publically available
     students can show interest/sign up for a submitted project
     admin can finish a project
     reviews
-
