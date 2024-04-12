@@ -1,1 +1,21 @@
-<p>submission-review works!</p>
+<form [formGroup]="submissionReviewForm.form">
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email" formControlName="email">
+
+  <label for="name">name</label>
+  <input type="name" name="name" id="name" formControlName="name">
+
+  <label for="projectDescription">projectDescription</label>
+  <input type="projectDescription" name="projectDescription" id="projectDescription" formControlName="projectDescription">
+
+  <label for="projectName">projectName</label>
+  <input type="projectName" name="projectName" id="projectName" formControlName="projectName">
+
+</form>
+
+<div>
+  <button [disabled]="!submissionReviewForm.areThereChanges()" (click)="submissionReviewForm.saveChanges()">Save changes</button>
+  <button [disabled]="!submissionReviewForm.canApprove()">Approve</button>
+  <button (click)="submissionReviewForm.deleteSubmission()">Delete</button>
+</div>
+

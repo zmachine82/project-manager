@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SubmissionsService } from '../../submissions.service';
+import { Submission } from '../../models/submission';
 
 @Component({
   selector: 'app-submissions-list',
@@ -8,7 +9,7 @@ import { SubmissionsService } from '../../submissions.service';
 })
 export class SubmissionsListComponent implements OnInit {
 
-  submissionsData: any[] = [];
+  submissionsData: Submission[] = [];
 
   constructor(private submissionsService: SubmissionsService) {}
 
