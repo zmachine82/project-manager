@@ -1,14 +1,28 @@
 .header {
-  background-color: rgb(43, 87, 169);
-  color: white;
+  background-color: #023b2d; /* black background */
+  color: #ece7e4; /* light grey text */
   height: 64px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: center; /* align children vertically in the center */
+  justify-content: space-between; /* space between h1 and h3 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* pronounced shadow for depth */
+  transition: background-color 0.3s; /* smooth transition for hover effects */
+  font-family: 'Roboto', sans-serif; /* robust, modern font */
 }
+
 h1 {
-  margin: 0 0 0 16px;
+  margin: 16px 16px 16px 16px; /* add right margin */
+  align-items: center;
+  font-size: 24px; /* larger font size for main heading */
+  font-weight: 700; /* bold font weight for emphasis */
+  color: #fcfcfc; /* vibrant white */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25); /* subtle text shadow for depth */
 }
+
 h3 {
-  margin: 0 16px 0 0;
+  margin: 0 16px 0 0; /* add left margin */
+  font-size: 18px; /* slightly smaller font size than h1 */
+  font-weight: 400; /* normal weight for less emphasis */
+  color: #ffffff; /* white */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* lighter text shadow */
 }

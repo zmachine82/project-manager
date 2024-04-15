@@ -1,0 +1,54 @@
+/* Basic styles for the form */
+form {
+  display: block;
+  margin: 20px auto;
+  width: 90%; /* Adjust width as necessary */
+  max-width: 500px; /* Maximum width of the form */
+}
+
+/* Styling individual input fields */
+input[type="text"],
+input[type="email"] {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0; /* Vertical spacing between inputs */
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 4px; /* Rounded corners */
+}
+input[type="description"] {
+
+width: 100%; /* Full width of its container */
+min-height: 50px; /* Minimum height to start with */
+overflow-x: auto; /* Scroll vertically if overflow */
+padding: 8px; /* Padding around text */
+box-sizing: border-box; /* Padding included in width/height calculation */
+resize: horizontal; /* Allows vertical resizing only */
+border: 1px solid #ccc; /* Subtle border for better visual structure */
+border-radius: 4px; /* Rounded corners for modern look */
+outline: none; /* Removes the default focus outline */
+transition: border-color 0.3s; /* Smooth transition for border color on focus */
+}
+button#submit {
+  width: 25%;
+  padding: 10px;
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  display: block; /* Make the button a block-level element */
+  margin: 10px auto; /* Vertical margin and horizontally centered */
+}
+
+button#submit:disabled {
+  background-color: #9E9E9E; /* Grey out button when disabled */
+  cursor: default; /* Default cursor when disabled */
+}
+
+/* Styling for the error message */
+div#errorMessage {
+  color: #FF0000; /* Red color for errors */
+  margin-top: 10px; /* Space above the error message */
+}
