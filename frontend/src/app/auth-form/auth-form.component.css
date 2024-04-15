@@ -1,0 +1,46 @@
+form {
+  display: block;
+  margin: 20px auto;
+  width: 90%; /* Adjust width as necessary */
+  max-width: 500px; /* Maximum width of the form */
+}
+
+/* Styling individual input fields */
+input[type="text"],
+input[type="email"] {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0; /* Vertical spacing between inputs */
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Styling for input fields */
+input[type="email"],
+input[type="password"] {
+  width: 100%; /* makes input take the full width of form */
+  padding: 8px; /* good padding to make text easily clickable */
+  margin-bottom: 15px; /* space below each input */
+  border: 1px solid #ccc; /* subtle border color */
+  border-radius: 4px; /* slightly rounded borders */
+  box-sizing: border-box; /* border and padding included in width */
+}
+
+/* Styling for the submit button */
+button#submitButton {
+  width: 100%; /* makes button take full width of the form */
+  padding: 10px; /* padding to make the button taller */
+  background-color: #4CAF50; /* a pleasant green background */
+  color: white; /* text color for the button */
+  font-size: 16px; /* font size to match labels */
+  border: none; /* no border */
+  border-radius: 4px; /* rounded corners for the button */
+  cursor: pointer; /* indicates the button is clickable */
+  transition: background-color 0.3s ease; /* smooth transition for hover */
+}
+
+button#submitButton:disabled {
+  background-color: #9e9e9e; /* dull color when the button is disabled */
+  cursor: default; /* default cursor when the button is disabled */
+}
